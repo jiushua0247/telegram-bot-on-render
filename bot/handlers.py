@@ -15,15 +15,12 @@ async def start_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     data = stats.get_all_stats()
 
-    await update.message.reply_text(
-        f"👋 欢迎你, {user.full_name}!
-"
-        f"📊 今日访问用户数: {data['today_count']}
-"
-        f"🆕 新用户数: {data['new_today_count']}
-"
-        f"📈 活跃用户数: {data['active_today_count']}
-"
-        f"🌍 来源排行:
-{data['top_sources']}"
-    )
+await update.message.reply_text(
+    f"""👋 欢迎你, {user.full_name}!
+📊 今日访问用户数: {data['today_count']}
+🆕 新用户数: {data['new_today_count']}
+📈 活跃用户数: {data['active_today_count']}
+🌍 来源排行:
+{data['top_sources']}"""
+)
+
